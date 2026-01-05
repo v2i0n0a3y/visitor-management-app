@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "245273466726",
+    "project_id": "visitor-managementapp",
+    "storage_bucket": "visitor-managementapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:245273466726:android:4d7d3797d297a235615aa7",
+        "android_client_info": {
+          "package_name": "com.vinay.visitor_management_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDG_sGmIIEfsHl98DTI-84zmmuxHY_BTVU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -13,24 +13,28 @@ class LoginController extends GetxController {
   var isLoading = false.obs;
   var errorMessage = ''.obs;
 
-  Future<void> signIn() async {
-    try {
-      isLoading(true);
-      errorMessage('');
-      User? user = await _authService.signInWithEmailAndPassword(
-          emailController.text, passwordController.text);
-      if (user != null) {
-        Get.offAll(() => const MainLayoutPage()); // Navigate to home screen
-      } else {
-        errorMessage("Login failed. Please check your credentials.");
-      }
-    } catch (e) {
-      errorMessage(e.toString());
-      print(e.toString());
-    } finally {
-      isLoading(false);
+Future<void> signIn() async {
+  try {
+    isLoading(true);
+    errorMessage('');
+
+    User? user = await _authService.signInWithEmailAndPassword(
+      emailController.text.trim(),
+      passwordController.text.trim(),
+    );
+
+    if (user != null) {
+      Get.offAll(() => const MainLayoutPage());
+    } else {
+      errorMessage("Login failed. Please check your credentials.");
     }
+  } catch (e) {
+    errorMessage(e.toString());
+    print(e.toString());
+  } finally {
+    isLoading(false);
   }
+}
 
   Future<void> signInWithGoogle() async {
     try {
